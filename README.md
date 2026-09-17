@@ -98,21 +98,19 @@ learn_process/
 
 ## A note on how the PDF was made / 关于 PDF 的生成方式
 
-The PDF is generated from source, not exported from Word or a browser. The build
-scripts live in a separate local directory and use a **self-contained PDF engine
-written for this purpose** (TrueType/TTC parsing, font subsetting, CIDFontType2 with
-Identity-H encoding, a `/ToUnicode` map for correct text copy-paste, cross-reference
-tables and PDF outline bookmarks) — no third-party PDF library involved.
+The PDF is typeset from source, not exported from Word or a browser. The content is
+written as a small Python document model (headings, paragraphs, code blocks, tables,
+call-out boxes), which is then laid out and written by **[fpdf2](https://pypi.org/project/fpdf2/)**
+with the fonts subset-embedded. The build scripts live in a separate local directory.
 
-这份 PDF 是由源码生成的，不是从 Word 或浏览器导出的。生成脚本存放在本地另一个目录中，
-使用了一套**为此专门写的自包含 PDF 引擎**（TrueType/TTC 解析、字体子集化、
-CIDFontType2 + Identity-H 编码、用于正确复制文字的 `/ToUnicode` 映射、交叉引用表与书签大纲），
-没有使用任何第三方 PDF 库。
+这份 PDF 由源码排版生成，不是从 Word 或浏览器导出的。内容写成一个小型 Python 文档模型
+（标题、段落、代码块、表格、提示框），再交给 **[fpdf2](https://pypi.org/project/fpdf2/)**
+排版输出并做字体子集嵌入。生成脚本存放在本地另一个目录中。
 
-Only the glyphs actually used in the document are embedded, which keeps the file at
-roughly 560 KB while remaining fully self-contained and searchable.
+Only the glyphs actually used are embedded, which keeps the file at roughly 510 KB while
+staying fully self-contained, searchable, and copy-paste friendly.
 
-文档只嵌入实际使用到的字形，因此文件约 560 KB，同时完全自包含、文字可搜索可复制。
+只嵌入实际使用到的字形，因此文件约 510 KB，同时完全自包含、文字可搜索可复制。
 
 ---
 
