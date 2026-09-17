@@ -110,9 +110,9 @@ CIDFontType2 + Identity-H 编码、用于正确复制文字的 `/ToUnicode` 映�
 没有使用任何第三方 PDF 库。
 
 Only the glyphs actually used in the document are embedded, which keeps the file at
-roughly 400 KB while remaining fully self-contained and searchable.
+roughly 560 KB while remaining fully self-contained and searchable.
 
-文档只嵌入实际使用到的字形，因此文件约 400 KB，同时完全自包含、文字可搜索可复制。
+文档只嵌入实际使用到的字形，因此文件约 560 KB，同时完全自包含、文字可搜索可复制。
 
 ---
 
